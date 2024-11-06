@@ -11,7 +11,8 @@ def github_auth(persistent_key: bool):
 
   if persistent_key:
     from google.colab import drive
-    drive.mount('/content/drive/')
+    # drive.mount('/content/drive/')
+    drive.mount('/content/drive/', force_remount=True)
     private_key_dir = "/content/drive/MyDrive/.colab-github"
     os.system(f"mkdir -p {private_key_dir}")
   else:
